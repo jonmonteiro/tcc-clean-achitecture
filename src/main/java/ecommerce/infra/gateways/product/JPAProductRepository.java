@@ -43,4 +43,9 @@ public class JPAProductRepository implements ProductRepository {
                 .collect(java.util.stream.Collectors.toList());
     }
 
+    @Override
+    public void deleteProduct(Long productId) {
+        repository.deleteById(productId);
+    }
+
 }

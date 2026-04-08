@@ -8,6 +8,8 @@ import ecommerce.application.usecases.product.CreateProductAppService;
 import ecommerce.application.usecases.product.FindProductAppService;
 import ecommerce.application.usecases.product.ListAllProducts;
 import ecommerce.application.usecases.product.UpdateProductStockAppService;
+import ecommerce.application.usecases.product.UpdateProductAppService;
+import ecommerce.application.usecases.product.DeleteProductAppService;
 import ecommerce.infra.gateways.product.ProductMapper;
 import ecommerce.infra.gateways.product.JPAProductRepository;
 import ecommerce.infra.persistense.product.ProductEntityRepository;
@@ -33,6 +35,16 @@ public class ProductConfig {
 	@Bean
 	ListAllProducts listAllProducts(ProductRepository productRepository) {
 		return new ListAllProducts(productRepository);
+	}
+
+	@Bean
+	UpdateProductAppService updateProduct(ProductRepository productRepository) {
+		return new UpdateProductAppService(productRepository);
+	}
+
+	@Bean
+	DeleteProductAppService deleteProduct(ProductRepository productRepository) {
+		return new DeleteProductAppService(productRepository);
 	}
 
 	@Bean
