@@ -4,8 +4,6 @@ FROM eclipse-temurin:17-jdk-alpine AS builder
 WORKDIR /app
 
 COPY . .
-COPY mvnw .
-COPY .mvn .mvn
 
 RUN chmod +x mvnw && ./mvnw clean package -DskipTests
 

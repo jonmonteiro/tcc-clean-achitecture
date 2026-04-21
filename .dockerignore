@@ -3,9 +3,6 @@ target/
 .github/
 .gitignore
 README.md
-.mvn/
-mvnw
-mvnw.cmd
 *.log
 .env
 node_modules/
